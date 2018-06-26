@@ -1,0 +1,40 @@
+---
+title: "Shiny - Week 4 Assignment"
+author: "Ganesh Prabhupatkar"
+date: "June 24, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Developing Data Products using Shiny - Assignment Week 4
+
+- Introduction
+- A Shiny application was developed to predict mpg based on selected variable
+- Application can be found in: https://gpatkar.shinyapps.io/shiny_assignment/
+- The source code is provided on Github:https://github.com/ganeshppatkar/Shiny-App---Week-4.git
+- A select box on the left side in the user interface can be used to select the variable for which the linear regression should be conducted.
+- The outputs include the linear model for MPG agains selected variable.
+
+## Data Used for the Regression Analyses
+ 
+- Data Set - mtcars
+
+## Linear Regressions Variables
+- mpg (Miles/(US) gallon) is the predicted value and the predictors are:
+- Number of Cylinders (cyl)
+- horsepower (hp)
+- Weight (wt)
+
+## Linear Regressions
+The following R code and plot the linear regression variable
+```{r lm, echo = TRUE}
+lm_f <- lm(mpg ~ wt, data = mtcars)
+plot(mpg ~ wt, data = mtcars, ylab="MPG", xlab="Weight",col="blue")
+abline(lm_f)
+```
+
+
+
